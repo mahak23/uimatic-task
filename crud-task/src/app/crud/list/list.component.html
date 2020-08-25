@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Student List</h2>
+  <button
+    class="btn btn-danger mb-4"
+    style="width: 100px;"
+    (click)="addStudent()"
+  >
+    Add Student
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Course</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td class="hidden">{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.gender }}</td>
+        <td>{{ student.course }}</td>
+        <td>
+          <button class="btn btn-success" (click)="deleteStudent(student.id)">
+            Delete
+          </button>
+          <button
+            class="btn btn-success"
+            (click)="editStudent(student.id)"
+            style="margin-left: 20px;"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
